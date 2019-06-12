@@ -45,5 +45,54 @@
       "description": "This is a product with a barcode",
       "image": "http://localhost:8080/demo/artifact-map/products/product3.png"
     }
+  },
+
+  {
+    "@context": "https://schema.googleapis.com/",
+    "@type": "ARArtifact",
+    "arTarget": {
+      "@type": "ARImageTarget",
+      "name": "rocks",
+      "image": "http://localhost:8080/demo/artifact-map/products/rocks.jpg",
+      "encoding": [
+        {
+          "@type": "MediaObject",
+          "contentUrl": "http://localhost:8080/demo/artifact-map/products/rocks.pb",
+          "encodingFormat": "application/octet+pd"
+        }
+      ]
+    },
+    "arContent": {
+      "@type": "WebPage",
+      "url": "http://localhost:8080/demo/artifact-map/products/rocks.html",
+      "name": "rocks",
+      "description": "Test your website",
+      "image": "http://localhost:8080/demo/artifact-map/products/rocks.jpg"
+    }
+  },
+
+  {
+    "@context": "https://schema.googleapis.com/",
+    "@type": "ARArtifact",
+    "arTarget": {
+      "@type": "ARImageTarget",
+      "name": "Lighthouse",
+      "image": "http://localhost:8080/demo/artifact-map/products/lighthouse.jpg",
+      "encoding": [
+        {
+          "@type": "MediaObject",
+          "contentUrl": "http://localhost:8080/demo/artifact-map/products/lighthouse.pb",
+          "encodingFormat": "application/octet+pd"
+        }
+      ]
+    },
+    "arContent": {
+      "@type": "WebPage",
+      "url": "http://localhost:8080/demo/artifact-map/products/lighthouse.html",
+      "mainEntity": "https://developers.google.com/web/tools/lighthouse/",
+      "name": "Lighthouse",
+      "description": "Test your website",
+      "image": "http://localhost:8080/demo/artifact-map/products/lighthouse.jpg"
+    }
   }
 ]
