@@ -8,5 +8,8 @@ src/*.js
 docs
 .rpt2_cache
 *.swp
-lib
+lib/*
+!lib/bundled
+!lib/planar
+!lib/polyfills
 target-generation/targets/*.pb
