@@ -61,7 +61,7 @@
       cardContainer: cardContainer,
 
       // Whether to show the onboarding flow.
-      onboarding: true,
+      onboarding: false,
 
       // Which images to show in carousel during onboarding
       onboardingImages: [
@@ -77,73 +77,7 @@
 
       debugLevel: 'verbose',
       root: '/perception-toolkit',
-      detectors: { 'image': true },
-
-      onload() {
-        addEventListeners();
-      }
-
-      function addEventListeners() {
-        const { Events, Elements } = window.PerceptionToolkit;
-
-        // Fires with a diff of markers found & lost.
-        window.addEventListener(Events.PerceivedResults, (evt) => {
-          const { found, lost } = evt.detail;
-
-          // First, automatically remove any "not recognized" cards if we now have content.
-          if (found.length !== 0) {
-            const notRecognizedCard =
-                cardContainer.querySelector('[data-not-recognized]');
-            if (notRecognizedCard) {
-              notRecognizedCard.remove();
-            }
-          }
-
-          // ...If we still have any cards on screen, leave them there.
-          // Note: Alternatively, could create a carousel of results.
-          if (cardContainer.childNodes.length > 0) {
-            return;
-          }
-
-          // If this is an unrecognized result.  Let's create an "error" card.
-          if (found.length === 0 && found.length === 0) {
-            // Take ownership of rendering.
-            evt.preventDefault();
-
-            /* 
-             * Dig In here.  Customize what to do in case of error!
-             */
-
-            const card = new Elements.Card();
-            card.src = 'Sorry, this item was not recognized.';
-            card.dataset.notRecognized = true;
-            cardContainer.appendChild(card);
-            return;
-          }
-          
-          // If this is a new result, show a custom card, in order to create a share button.
-          if (found.length > 0) {
-            // Take ownership of rendering.
-            evt.preventDefault();
-
-            const card = new Elements.Card();
-            card.src = found[0].artifact.arContent;
-            cardContainer.appendChild(card);
-
-            /*
-            // Dig In here.  Customize the Card UI yourself!
-            const button = new Elements.ActionButton();
-            button.label = 'Share';
-            button.addEventListener('click', () => {
-              console.log('clicked');
-              card.close();
-            })
-            card.appendChild(button);
-            */
-
-            return;
-          }
-        });
+      detectors: { 'image': true }
     };
   </script>
   <script src="lib/bundled/bootstrap.js"></script>
