@@ -39,7 +39,7 @@ class Detector {
   private worker!: Worker;
   private workerMessageCallbacks = new Map<string, (data: any) => void>();
 
-  constructor(root = '') {
+  constructor(root = '/perception-toolkit') {
     console.log("root: ", root);
 
     this.isReadyInternal = new Promise((resolve) => {
