@@ -116,7 +116,7 @@ export class Card extends HTMLElement {
    *
    * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#attr-sandbox
    */
-  sandboxAttribute: string = 'allow-same-origin';
+  sandboxAttribute: string = 'allow-scripts';
 
   private srcInternal: string | URL | CardData = '';
   private widthInternal: number | undefined;
