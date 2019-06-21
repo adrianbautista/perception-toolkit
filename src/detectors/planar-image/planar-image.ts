@@ -39,8 +39,10 @@ class Detector {
   private worker!: Worker;
   private workerMessageCallbacks = new Map<string, (data: any) => void>();
 
-  constructor(root = '/perception-toolkit') {
+  constructor(root = '') {
     console.log("root: ", root);
+    root = '/perception-toolkit';
+    console.log("manual root: ", root);
 
     this.isReadyInternal = new Promise((resolve) => {
       this.worker = new Worker(`${root}/lib/planar/planar-image_worker.js`);
