@@ -78,8 +78,50 @@
 
       debugLevel: 'verbose',
       root: '/perception-toolkit',
-      detectors: { 'image': true }
+      detectors: { 'image': true },
+
+      onload() {
+        addEventListeners();
+      }
     };
+
+    function addEventListeners() {
+      const { Events, Elements } = window.PerceptionToolkit;
+
+      // Fires with a diff of markers found & lost.
+      window.addEventListener(Events.PerceivedResults, (evt) => {
+        const { found, lost } = evt.detail;
+
+        // ...If we still have any cards on screen, leave them there.
+        // Note: Alternatively, could create a carousel of results.
+        if (cardContainer.childNodes.length > 0) {
+          return;
+        }
+
+        // If this is a new result, show a custom card, in order to create a share button.
+        if (found.length > 0) {
+          // Take ownership of rendering.
+          evt.preventDefault();
+
+          const card = new Elements.Card();
+          card.src = "custom card";
+          cardContainer.appendChild(card);
+
+          /*
+          // Dig In here.  Customize the Card UI yourself!
+          const button = new Elements.ActionButton();
+          button.label = 'Share';
+          button.addEventListener('click', () => {
+            console.log('clicked');
+            card.close();
+          })
+          card.appendChild(button);
+          */
+
+          return;
+        }
+      });
+    }
   </script>
   <script src="lib/bundled/bootstrap.js"></script>
 </body>
