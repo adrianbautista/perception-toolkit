@@ -40,6 +40,8 @@ class Detector {
   private workerMessageCallbacks = new Map<string, (data: any) => void>();
 
   constructor(root = '') {
+    console.log("root: ", root);
+
     this.isReadyInternal = new Promise((resolve) => {
       this.worker = new Worker(`${root}/lib/planar/planar-image_worker.js`);
       this.worker.onmessage = async (e) => {
