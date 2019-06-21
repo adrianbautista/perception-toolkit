@@ -1,4 +1,25 @@
-# Web Perception Toolkit
+# Demo
+
+Demo static website that uses perception-toolkit to launch an instance of model-viewer component for viewing 3D objects.
+
+## Target Images
+
+![lighthouse](demo/simple/pages/lighthouse.jpg)
+
+![rocks](demo/simple/pages/rocks.jpg)
+
+## Changes from simple demo
+
+- Skip onboarding
+- Load custom card with iframe to model-viewer when marker found
+- Explicitly only load image detector
+- Manually set `root` in [planar-image.ts](src/detectors/planar-image/planar-image.ts) detector constructor because it was coming in empty despite `PerceptionToolkit.config.root` being set
+
+---
+
+# Web Perception Toolkit [Original README]
+
+
  [![Build Status](https://api.travis-ci.org/GoogleChromeLabs/perception-toolkit.svg?branch=master)](https://travis-ci.org/GoogleChromeLabs/perception-toolkit)
  [![NPM](https://img.shields.io/npm/v/perception-toolkit.svg)](https://www.npmjs.com/package/perception-toolkit)
 
