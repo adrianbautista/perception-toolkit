@@ -104,19 +104,10 @@
           evt.preventDefault();
 
           const card = new Elements.Card();
-          card.src = "custom card";
+          card.width = 300;
+          card.height = 250;
+          card.src = new URL("/perception-toolkit/mv.html", location.origin);
           cardContainer.appendChild(card);
-
-          /*
-          // Dig In here.  Customize the Card UI yourself!
-          const button = new Elements.ActionButton();
-          button.label = 'Share';
-          button.addEventListener('click', () => {
-            console.log('clicked');
-            card.close();
-          })
-          card.appendChild(button);
-          */
 
           return;
         }
