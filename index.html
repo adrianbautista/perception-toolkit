@@ -24,17 +24,17 @@
     <!--
       Step 1: Include default style sheet.
     -->
-    <link rel="stylesheet" href="/styles/perception-toolkit.css">
-    <link rel="stylesheet" href="/demo/common/style.css">
+    <link rel="stylesheet" href="perception-toolkit/styles/perception-toolkit.css">
+    <link rel="stylesheet" href="perception-toolkit/demo/common/style.css">
 
     <!--
       Step 2: Set up webcomponents-loader.js
     -->
     <script>
       window.WebComponents = window.WebComponents || {};
-      window.WebComponents.root = '/node_modules/@webcomponents/webcomponentsjs/';
+      window.WebComponents.root = 'perception-toolkit/node_modules/@webcomponents/webcomponentsjs/';
     </script>
-    <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="perception-toolkit/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
   </head>
 <body>
 
@@ -64,17 +64,17 @@
 
       // Which images to show in carousel during onboarding
       onboardingImages: [
-        '/demo/common/images/step1.jpg',
-        '/demo/common/images/step2.jpg',
-        '/demo/common/images/step3.jpg'
+        'perception-toolkit/demo/common/images/step1.jpg',
+        'perception-toolkit/demo/common/images/step2.jpg',
+        'perception-toolkit/demo/common/images/step3.jpg'
       ],
       
       // Sources from which to load AR ARtifacts.  Will load after Perception init.
       artifactSources: [
-        './pages/lighthouse.html'
+        'perception-toolkit/pages/lighthouse.html'
       ],
     };
   </script>
-  <script src="/lib/bundled/bootstrap.js"></script>
+  <script src="perception-toolkit/lib/bundled/bootstrap.js"></script>
 </body>
 </html>
